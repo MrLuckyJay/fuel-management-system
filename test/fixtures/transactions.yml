@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  productType: MyString
+  liters: 1
+  vehicleNumber: MyString
+  user: one
+
+two:
+  productType: MyString
+  liters: 1
+  vehicleNumber: MyString
+  user: two
