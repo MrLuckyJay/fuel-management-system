@@ -1,5 +1,7 @@
 class TransactionsController < ApplicationController
   before_action :set_transaction, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:login, :signup]
+  #before_action :require_same_user, only:[:edit,:update,:destroy]
 
   # GET /transactions
   # GET /transactions.json
@@ -15,6 +17,8 @@ class TransactionsController < ApplicationController
   # GET /transactions/new
   def new
     @transaction = Transaction.new
+    @user = current_user
+    @products = Product.all
   end
 
   # GET /transactions/1/edit

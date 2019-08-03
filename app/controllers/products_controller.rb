@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:login, :signup]
+  #before_action :require_same_user, only:[:edit,:update,:destroy]
 
   # GET /products
   # GET /products.json
@@ -15,6 +17,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    @user = current_user
   end
 
   # GET /products/1/edit

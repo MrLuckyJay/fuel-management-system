@@ -1,42 +1,103 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :firstname %>
-    <%= form.text_field :firstname %>
-  </div>
 
-  <div class="field">
-    <%= form.label :lastname %>
-    <%= form.text_field :lastname %>
-  </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
 
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+
+<div class="login" >
+
+    <div class="row">
+            <div class="container">
+                    
+                    <div class="col-sm-10 mainlog">
+                        <div class="row">
+                                <div class="col-sm-6" >
+                                        
+                                        <h1 style="padding-top:1vh; color:white; text-align:center;">Creat an Account to manage your fuel Consumption</h1>
+
+
+                                        <div class="card col-sm-12 " style="padding: 4vh;margin-top:2vh; background:#ffffff54;margin-bottom: 10vh; ">
+                                   
+                                          <div class="signup">
+
+
+                                              <%= form_with(model: user, local: true) do |form| %>
+                                              <% if user.errors.any? %>
+                                                <div id="error_explanation">
+                                                  <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+                                            
+                                                  <ul>
+                                                  <% user.errors.full_messages.each do |message| %>
+                                                    <li><%= message %></li>
+                                                  <% end %>
+                                                  </ul>
+                                                </div>
+                                              <% end %>
+                                            
+                                              <div class="form-group">
+                                                <%= form.label :firstname %>
+                                                <%= form.text_field :firstname,
+                                                class:'form-control',placeholder:'Enter First Name' %>
+                                              </div>
+                                            
+                                              <div class="field">
+                                                <%= form.label :lastname %>
+                                                <%= form.text_field :lastname, class:'form-control',placeholder:'Enter Last Name' %>
+                                              </div>
+                                            
+                                              <div class="field">
+                                                <%= form.label :email %>
+                                                <%= form.text_field :email, class:'form-control',placeholder:'Enter your Email' %>
+                                              </div>
+                                            
+                                              <div class="field">
+                                                <%= form.label :password %>
+                                                <%= form.password_field :password, class:'form-control',placeholder:'Create A Password' %>
+                                              </div>
+                                            
+                                              <div class="field">
+                                                <%= form.label :password_confirmation %>
+                                                <%= form.password_field :password_confirmation, class:'form-control',placeholder:'Confirm your Password' %>
+                                              </div>
+                                            
+                                              <div class="actions">
+                                                <%= form.submit 'Sign Up', class:'btn btn-primary btn-block' %>
+                                              </div>
+                                            <% end %>
+                                          </div>
+                                          
+                                    </div>
+                                </div>
+        
+        
+        
+                                <div class="col-sm-6 ">
+
+                                    <div class="col-sm-2" style="margin-top: 35vh">
+                                                    <h1 style="color: white">OR</h1>
+                                    </div>
+
+                                    <div class="col-sm-10 signup" style="margin-top: 35vh; ">
+                                            <%= link_to  "Log in", root_path,class:'btn btn-default btn-block btn-lg signup-link'  %>
+                                    </div>
+
+                                    
+        
+                
+                               </div>
+        
+        
+            
+                        </div>
+        
+                            
+                            
+                            
+        
+                    </div>
+                    
+            </div>
+        </div>
+</div>

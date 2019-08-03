@@ -1,3 +1,5 @@
+
+
 <%= form_with(model: stock, local: true) do |form| %>
   <% if stock.errors.any? %>
     <div id="error_explanation">
@@ -23,12 +25,12 @@
 
   <div class="field">
     <%= form.label :total %>
-    <%= form.number_field :total %>
+    <%= form.number_field :total, value:'EBK002' %>
   </div>
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <%= form.text_field :user_id, value:@user.id %>
   </div>
 
   <div class="actions">

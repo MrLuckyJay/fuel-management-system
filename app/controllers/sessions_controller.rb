@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
     
     def new
-        redirect_to users_path if logged_in? 
+        redirect_to transactions_path if logged_in? 
     end
 
     def create
@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:session][:password])
             session[:user_id]= user.id
             #flah[:success]="Wecome #{user.username}"
-            redirect_to user_path(user)
+            redirect_to new_transaction_path
 
         else
             #flah.now[:danger]="User Name or password Incorrect"
