@@ -9,8 +9,8 @@ local:
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 amazon:
   service: S3
-  access_key_id: "AKIA3VBR7S6UPVLL7XGO"
-  secret_access_key: "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"
+  access_key_id: "AKIA3VBR7S6UK5GPYDG5"
+  secret_access_key: "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"
   region: "US West(N.California)"
   bucket: "fuel-management-system"
 
