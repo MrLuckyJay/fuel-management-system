@@ -1,3 +1,17 @@
-<div class="container-fluid">
-    <h1>Hello World</h1>
-</div>
+
+        <div class="jumbotron">
+                <div class="col-xs-8">
+                        <div class="writeup">
+                                <h1>Fuel Management System</h1><br>
+                                <p>Manage your Fuel Consumption with just few clicks,all you have to do is just login, enter your data and allow the System to do the rest </p>
+                                <p>Sign up today and track all your Fuel Consumptions</p><br>
+                                <%= link_to  "Sign up", signup_path, class:'btn btn-success outline btn-lg' %>
+                        </div>
+                </div>
+
+                <div class="col-xs-4">
+                       <div class="pump">
+                            <%=image_tag("fuel.png")%>
+                       </div>
+                </div>
+        </div>
