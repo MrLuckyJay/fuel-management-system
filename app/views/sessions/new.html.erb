@@ -7,10 +7,10 @@
                             <div class="row">
                                     <div class="col-sm-6" >
                                             
-                                            <h1 style="padding-top:2vh; color:white; text-align:center;">Plese Login to Manage your Fuel Consumption</h1>
+                                            <h1 style="padding-top:2vh; text-align:center;">Plese Login to Manage your Fuel Consumption</h1>
 
 
-                                            <div class="card col-sm-8 col-sm-offset-2" style="padding: 4vh;margin-top:5vh; background:#ffffff54;margin-bottom: 35%; ">
+                                            <div class="card col-sm-8 col-sm-offset-2" style="padding: 4vh;margin-top:5vh; background:#11070770;margin-bottom: 35%; ">
                                                 <%= form_for(:session, local: true, url:login_path) do |form| %>
                     
                       
@@ -27,7 +27,7 @@
                                                 
                                               
                                                 <div class="actions">
-                                                  <%= form.submit'login', class:'btn btn-primary btn-lg btn-block' %>
+                                                  <%= form.submit'login', class:'btn btn-success btn-lg btn-block' %>
                                                 </div>
                                               <% end %>
                                               
@@ -43,7 +43,7 @@
                                         </div>
 
                                         <div class="col-sm-10 signup" style="margin-top: 35vh;  ">
-                                                <%= link_to  "Sign up", signup_path,class:'btn btn-default btn-block btn-lg signup-link'  %>
+                                                <%= link_to  "Sign up", signup_path,class:'btn btn-success btn-block btn-lg signup-link'  %>
                                         </div>
 
                                         
