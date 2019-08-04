@@ -1,4 +1,5 @@
 APPLICATIONNAME::Application.configure do                        
-    config.assets.compile = true
+    config.active_storage.service = :amazon
+
     
 end
