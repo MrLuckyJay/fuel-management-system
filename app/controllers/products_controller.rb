@@ -18,9 +18,10 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    @current_user = current_user
+    
     @product = Product.new
     @user = current_user
+    @current_user = current_user
   end
 
   # GET /products/1/edit
@@ -31,7 +32,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @current_user = current_user
+   
     @product = Product.new(product_params)
 
     respond_to do |format|
@@ -43,6 +44,8 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
+
+    @current_user = current_user
   end
 
   # PATCH/PUT /products/1
