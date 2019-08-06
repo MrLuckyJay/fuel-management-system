@@ -6,27 +6,32 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    @current_user = current_user
     @products = Product.all
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    @current_user = current_user
   end
 
   # GET /products/new
   def new
+    @current_user = current_user
     @product = Product.new
     @user = current_user
   end
 
   # GET /products/1/edit
   def edit
+    @current_user = current_user
   end
 
   # POST /products
   # POST /products.json
   def create
+    @current_user = current_user
     @product = Product.new(product_params)
 
     respond_to do |format|
@@ -43,6 +48,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+    @current_user = current_user
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -57,6 +63,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    @current_user = current_user
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }

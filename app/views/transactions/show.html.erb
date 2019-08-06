@@ -1,24 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="page">
+    <div class="container">
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Producttype:</strong>
-  <%= @transaction.productType %>
-</p>
-
-<p>
-  <strong>Liters:</strong>
-  <%= @transaction.liters %>
-</p>
-
-<p>
-  <strong>Vehiclenumber:</strong>
-  <%= @transaction.vehicleNumber %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @transaction.user %>
-</p>
-
-<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
-<%= link_to 'Back', transactions_path %>
+        <p>
+          <strong>Producttype:</strong>
+          <%= @transaction.productType %>
+        </p>
+        
+        <p>
+          <strong>Liters:</strong>
+          <%= @transaction.liters %>
+        </p>
+        
+        <p>
+          <strong>Vehiclenumber:</strong>
+          <%= @transaction.vehicleNumber %>
+        </p>
+        
+        <p>
+          <strong>User:</strong>
+          <%= @transaction.user.firstname %>
+          <%= @transaction.user.lastname %>
+        </p>
+        
+        <%= link_to 'Edit', edit_transaction_path(@transaction) %> |
+        <%= link_to 'Back', transactions_path %>
+    </div>
+    
+</div>

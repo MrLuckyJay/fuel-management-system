@@ -6,27 +6,32 @@ class StocksController < ApplicationController
   # GET /stocks
   # GET /stocks.json
   def index
+    @current_user = current_user
     @stocks = Stock.all
   end
 
   # GET /stocks/1
   # GET /stocks/1.json
   def show
+    @current_user = current_user
   end
 
   # GET /stocks/new
   def new
+    @current_user = current_user
     @stock = Stock.new
     @user = current_user
   end
 
   # GET /stocks/1/edit
   def edit
+    @current_user = current_user
   end
 
   # POST /stocks
   # POST /stocks.json
   def create
+    @current_user = current_user
     @stock = Stock.new(stock_params)
 
     respond_to do |format|
@@ -43,6 +48,7 @@ class StocksController < ApplicationController
   # PATCH/PUT /stocks/1
   # PATCH/PUT /stocks/1.json
   def update
+    @current_user = current_user
     respond_to do |format|
       if @stock.update(stock_params)
         format.html { redirect_to @stock, notice: 'Stock was successfully updated.' }
@@ -57,6 +63,7 @@ class StocksController < ApplicationController
   # DELETE /stocks/1
   # DELETE /stocks/1.json
   def destroy
+    @current_user = current_user
     @stock.destroy
     respond_to do |format|
       format.html { redirect_to stocks_url, notice: 'Stock was successfully destroyed.' }

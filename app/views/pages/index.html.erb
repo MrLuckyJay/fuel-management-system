@@ -1,61 +1,93 @@
+<div class="jumbotron">
+        <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="writeup">
+                        <h1>Fuel Management System</h1><br>
+                        <p>Manage your Fuel Consumption with just few clicks,all you have to do is just login, enter
+                                your data and allow the System to do the rest </p>
+                        <p class='hidden-xs'>Sign up today and track all your Fuel Consumptions</p><br>
+                        <%= link_to  "Sign up", signup_path, class:'btn btn-success outline btn-lg' %>
+                </div>
+        </div>
 
-        <div class="jumbotron">
-                <div class="col-md-8 col-sm-12 col-xs-12">
-                        <div class="writeup">
-                                <h1>Fuel Management System</h1><br>
-                                <p >Manage your Fuel Consumption with just few clicks,all you have to do is just login, enter your data and allow the System to do the rest </p>
-                                <p class='hidden-xs'>Sign up today and track all your Fuel Consumptions</p><br>
-                                <%= link_to  "Sign up", signup_path, class:'btn btn-success outline btn-lg' %>
+        <div class="col-md-4 hidden-sm hidden-xs">
+                <div class="pump">
+                        <%=image_tag("fuel.png")%>
+                </div>
+        </div>
+</div>
+<div class="mid">
+
+        <div class="container">
+                <div class="row">
+                        <div class="col-md-4">
+                                <div class="thumbnail">
+                                        <p style="text-align: center">
+                                                <span class="glyphicon glyphicon-log-in  icon"
+                                                        style="color:green !important; font-size:20vh; "></span>
+                                        </p>
+                                        <div class="content">
+                                                <div class="caption">
+
+
+                                                        <h1 align=center>Signing up</h1>
+                                                        <p align=center>Lorem ipsum, dolor sit amet consectetur
+                                                                adipisicing elit. Dolor est quo ex quia veniam vero
+                                                                porro autem. Dicta, doloremque cumque beatae eligendi et
+                                                                alias incidunt magni sunt porro recusandae assumenda.
+                                                        </p>
+
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="col-md-4">
+                                <div class="thumbnail">
+                                        <p style="text-align: center">
+                                                <span class="glyphicon glyphicon-plus-sign  icon"
+                                                        style="color:green !important;font-size:20vh; "></span>
+                                        </p>
+
+                                        <div class="content">
+                                                <div class="caption">
+
+                                                        <h1 align=center>Signing up</h1>
+                                                        <p align=center>Lorem ipsum, dolor sit amet consectetur
+                                                                adipisicing elit. Dolor
+                                                                est quo ex quia veniam vero porro autem. Dicta,
+                                                                doloremque cumque beatae
+                                                                eligendi et alias incidunt magni sunt porro recusandae
+                                                                assumenda.</p>
+                                                </div>
+                                        </div>
+                                </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+                                <div class="thumbnail">
+
+                                        <p style="text-align: center"><span class="glyphicon glyphicon-stats"
+                                                        style=" color:green !important;font-size:20vh; "></span>
+                                        </p>
+
+                                        <div class="content">
+                                                <div class="caption">
+                                                        <h1 align=center>Track Consumption</h1>
+                                                        <p align=center>Lorem ipsum, dolor sit amet consectetur
+                                                                adipisicing elit. Dolor
+                                                                est quo ex quia veniam vero porro autem. Dicta,
+                                                                doloremque cumque beatae
+                                                                eligendi et alias incidunt magni sunt porro recusandae
+                                                                assumenda.</p>
+
+                                                </div>
+                                        </div>
+
+                                </div>
                         </div>
                 </div>
 
-                <div class="col-md-4 hidden-sm hidden-xs">
-                       <div class="pump">
-                            <%=image_tag("fuel.png")%>
-                       </div>
-                </div>
         </div>
-        <div class="mid">
 
-                        <div class="container">
-                                        <div class="row">
-                                                        <div class="col-md-4">
-                                                                        <span class="glyphicon glyphicon-log-in  icon" style="color:green !important; font-size:20vh; margin-left:25%;"></span>
-                                                                <div class="content">
-                                                                        
-
-                                                                        <h2 align=center>Signing up</h2>
-                                                                        <p align=center>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor est quo ex quia veniam vero porro autem. Dicta, doloremque cumque beatae eligendi et alias incidunt magni sunt porro recusandae assumenda.</p>
-                                                                </div>
-                                                        </div>
-                        
-                                                         <div class="col-md-4">
-                                                                        <span class="glyphicon glyphicon-plus-sign  icon" style="color:green !important;font-size:20vh; margin-left:15vh; margin-left:25%;"></span>
-                        
-                                                                        <div 
-                                                                        
-                                                                        
-                                                                        class="content">
-
-                                                                        <h2 align=center>Signing up</h2>
-                                                                                        <p align=center>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor est quo ex quia veniam vero porro autem. Dicta, doloremque cumque beatae eligendi et alias incidunt magni sunt porro recusandae assumenda.</p>
-                                                                                </div>
-                                                        
-                                                         </div>
-                        
-                                                         <div class="col-md-4">
-
-                                                                        <span class="glyphicon glyphicon-stats" style=" color:green !important;font-size:20vh;margin-left:15vh; margin-left:25%;"></span>
-                        
-                                                                        <div class="content">
-                                                                                        <h2 align=center>Tracking Consumptions</h2>
-                                                                                        <p align=center>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor est quo ex quia veniam vero porro autem. Dicta, doloremque cumque beatae eligendi et alias incidunt magni sunt porro recusandae assumenda.</p>
-                                                                                </div>
-                                                        
-                                                         </div>
-                                        </div>
-                                    
-                                </div>
-
-        </div>
-        
+</div>

@@ -7,11 +7,13 @@ class TransactionsController < ApplicationController
   # GET /transactions.json
   def index
     @transactions = Transaction.all
+    @current_user = current_user
   end
 
   # GET /transactions/1
   # GET /transactions/1.json
   def show
+    @current_user = current_user
   end
 
   # GET /transactions/new
@@ -19,18 +21,22 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new
     @user = current_user
     @products = Product.all
+    @current_user = current_user
   end
 
   # GET /transactions/1/edit
   def edit
+    @current_user = current_user
   end
 
   # POST /transactions
   # POST /transactions.json
   def create
+    @current_user = current_user
     @transaction = Transaction.new(transaction_params)
 
     respond_to do |format|
+      @current_user = current_user
       if @transaction.save
         format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
         format.json { render :show, status: :created, location: @transaction }
@@ -44,6 +50,7 @@ class TransactionsController < ApplicationController
   # PATCH/PUT /transactions/1
   # PATCH/PUT /transactions/1.json
   def update
+    @current_user = current_user
     respond_to do |format|
       if @transaction.update(transaction_params)
         format.html { redirect_to @transaction, notice: 'Transaction was successfully updated.' }
@@ -58,6 +65,7 @@ class TransactionsController < ApplicationController
   # DELETE /transactions/1
   # DELETE /transactions/1.json
   def destroy
+    @current_user = current_user
     @transaction.destroy
     respond_to do |format|
       format.html { redirect_to transactions_url, notice: 'Transaction was successfully destroyed.' }

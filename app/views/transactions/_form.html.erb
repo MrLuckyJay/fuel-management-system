@@ -1,37 +1,58 @@
-<%= form_with(model: transaction, local: true) do |form| %>
-  <% if transaction.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+<div class="thumbnail" style="padding: 15vh;">
 
-      <ul>
-      <% transaction.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+    <%= form_with(model: transaction, local: true, class:"form-horizontal") do |form| %>
+    <% if transaction.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+  
+        <ul>
+        <% transaction.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="form-group">
+      <%= form.label :productType, class:"col-md-3 control-label" %>
+      <div class="col-md-7">
+          <%= form.text_field :productType, class:"form-control" %>
+      </div>
+      
+    </div>
+  
+    <div class="form-group">
+      <%= form.label :liters, class:"col-md-3 control-label" %>
+      <div class="col-md-7">
+          <%= form.number_field :liters, class:"form-control" %>
+      </div>
+      
+    </div>
+  
+    <div class="form-group">
+      <%= form.label :vehicleNumber, class:"col-md-3 control-label" %>
+      <div class="col-md-7">
+          <%= form.text_field :vehicleNumber, class:"form-control" %>
+      </div>
+      
+    </div>
+  
+    <div class="form-group">
+      <% form.label :user_id, class:"col-md-3 control-label" %>
+      <div class="col-md-7">
+          <%= form.text_field :user_id, value:@current_user.id, class:"form-control",type:"hidden" %>
+      </div>
+      
+    </div>
+  
+    <div class="form-group col-md-9 ">
+      <div  class="col-md-offset-5">
+          <%= form.submit "Add", class:'btn btn-success btn-lg btn-block' %>
+      </div>
     </div>
   <% end %>
+  
 
-  <div class="field">
-    <%= form.label :productType %>
-    <%= form.text_field :productType %>
-  </div>
 
-  <div class="field">
-    <%= form.label :liters %>
-    <%= form.number_field :liters %>
-  </div>
-
-  <div class="field">
-    <%= form.label :vehicleNumber %>
-    <%= form.text_field :vehicleNumber %>
-  </div>
-
-  <div class="field">
-    <% form.label :user_id %>
-    <% form.text_field :user_id, value:@user.id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

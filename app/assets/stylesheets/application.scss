@@ -48,6 +48,10 @@ body,html{
     background-image: asset-url('background-image.png');
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
     color: #fff;
     padding: 0%;
 }
@@ -74,15 +78,19 @@ body,html{
     padding-top: 5vh;
     
 }
+.page{
+    background: #d5f28758;
+    color: rgba(82, 79, 79, 0.831);
+    height: 600px;
+    width: 100%;
+    padding-top: 0vh;
+}
 
 .content p{
     font-size: 3vh;
     line-height:1.6em;
 }
-.icon .glyphicon{
-    
-    
-}
+
 
 img {
     max-width: 100%;
@@ -105,4 +113,6 @@ img {
     
     
 }
-
+.thumbnail{
+    background: #d5f28758!important;
+}

@@ -7,11 +7,14 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @current_user = current_user
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @current_user = current_user
+
   end
 
   # GET /users/new
@@ -25,6 +28,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @current_user = current_user
   end
 
   # POST /users
@@ -55,6 +59,7 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+    @current_user = current_user
   end
 
   # DELETE /users/1
