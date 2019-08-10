@@ -24,7 +24,7 @@ gem 'coffee-rails', '~> 4.2'
 gem "aws-sdk-s3", require: false
 gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
 gem 'fog-aws', '~> 3.5', '>= 3.5.2'
-gem 'mini_magick'
+gem 'mini_magick', '~> 4.9', '>= 4.9.5'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
