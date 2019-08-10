@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_31_105214) do
+ActiveRecord::Schema.define(version: 2019_08_10_084155) do
 
   create_table "products", force: :cascade do |t|
     t.string "productName"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2019_07_31_105214) do
   create_table "stocks", force: :cascade do |t|
     t.string "productType"
     t.integer "liters"
-    t.integer "total"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -38,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_07_31_105214) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image", default: ""
     t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
@@ -48,6 +48,9 @@ ActiveRecord::Schema.define(version: 2019_07_31_105214) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "profile_pic"
+    t.boolean "is_admin", default: false
+    t.boolean "is_staff", default: false
   end
 
 end

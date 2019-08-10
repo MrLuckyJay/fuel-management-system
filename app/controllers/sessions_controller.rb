@@ -8,20 +8,20 @@ class SessionsController < ApplicationController
         user = User.find_by(email: params[:session][:email].downcase)
         if user && user.authenticate(params[:session][:password])
             session[:user_id]= user.id
-            #flah[:success]="Wecome #{user.username}"
             redirect_to new_transaction_path
+            flash[:success]="Wecome #{user.firstname } #{user.lastname}"
 
         else
-            #flah.now[:danger]="User Name or password Incorrect"
-            redirect_to root_path
+            redirect_to login_path
+            flash[:danger]="User Name or password Incorrect"
 
         end
     end
 
     def destroy
         session[:user_id]= nil
-        #flah[:success]="You have successfully been loged out"
         redirect_to root_path
+        flash[:success]="You have successfully been loged out"
 
     end
 

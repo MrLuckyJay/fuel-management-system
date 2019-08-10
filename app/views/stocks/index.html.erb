@@ -1,7 +1,7 @@
 <div class="page">
     <div class="container">
 
-<p id="notice"><%= notice %></p>
+        <%= render  "tools/messages" %>
 
 <div class="row" style="padding: 5vh;">
     <div class="col-md-3 col-md-offset-5">
@@ -16,7 +16,6 @@
     <tr>
       <th>Producttype</th>
       <th>Liters</th>
-      <th>Total</th>
       <th>User</th>
       <th colspan="3">Actions</th>
     </tr>
@@ -27,7 +26,7 @@
       <tr>
         <td><%= stock.productType %></td>
         <td><%= stock.liters %></td>
-        <td><%= stock.total %></td>
+       
         <td><%= stock.user.firstname %> <%= stock.user.lastname %></td>
         <td><%= link_to 'Show', stock, class:'btn-success btn-sm' %></td>
         <td><%= link_to 'Edit', edit_stock_path(stock), class:'btn-primary btn-sm' %></td>

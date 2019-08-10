@@ -4,6 +4,9 @@
         <div class="container">
                 
                 <h1 align=center style="padding: 10vh; padding-bottom:5vh;">Enter New Stock</h1>
+
+                <%= render  "tools/error", obj:@stock %>
+                <%= render  "tools/messages" %>
                 <div class="col-md-10 col-md-offset-1">
                         <%= render 'form', stock: @stock %>
                 </div>

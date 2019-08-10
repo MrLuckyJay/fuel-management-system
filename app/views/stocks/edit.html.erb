@@ -1,6 +1,13 @@
-<h1>Editing Stock</h1>
-
-<%= render 'form', stock: @stock %>
-
-<%= link_to 'Show', @stock %> |
-<%= link_to 'Back', stocks_path %>
+<div class="page">
+    <div class="container">
+            <h1 align=center style="padding: 10vh; padding-bottom:5vh;">Editing Stock</h1>
+            <%= render  "tools/messages" %>
+            <%= render  "tools/error" %>
+            
+            <%= render 'form', stock: @stock %>
+            
+            <%= link_to 'Show', @stock %> |
+            <%= link_to 'Back', stocks_path %>
+            
+    </div>
+</div>

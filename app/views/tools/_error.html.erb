@@ -1,0 +1,19 @@
+<% if obj.errors.any? %>
+<div class="row"  align=center>
+    <div class="col-md-8 col-offset-md-2">
+        <div class="panel panel-danger" align=center>
+            <div class="panel-heading">
+                <h4 class="panel-title" align=center><%= pluralize(obj.errors.count, "error") %> prohibited this transaction from being saved:</h4>
+            </div>
+
+            <div class="panle-body" align=center>
+                <ul>
+                    <% obj.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>

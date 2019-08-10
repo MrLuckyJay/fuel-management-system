@@ -35,15 +35,15 @@ class ProductsController < ApplicationController
    
     @product = Product.new(product_params)
 
-    respond_to do |format|
+   
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
+       redirect_to @product
+       flash[:success]='Product was successfully created.' 
       else
-        format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+        render :new
+        flash[:danger]='errors prevented the product from been created'
       end
-    end
+    
 
     @current_user = current_user
   end
@@ -52,15 +52,15 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1.json
   def update
     @current_user = current_user
-    respond_to do |format|
+   
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { render :show, status: :ok, location: @product }
+        redirect_to @product
+        flash[:success]='Product was successfully updated.'
       else
-        format.html { render :edit }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+       render :edit 
+       flash[:danger]='errors prevented the product from been updated'
       end
-    end
+    
   end
 
   # DELETE /products/1
@@ -68,10 +68,9 @@ class ProductsController < ApplicationController
   def destroy
     @current_user = current_user
     @product.destroy
-    respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+     redirect_to products_url 
+     flash[:danger] = 'Product was successfully destroyed.'
+    
   end
 
   private
@@ -84,4 +83,5 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:productName, :productPrice, :user_id)
     end
+  
 end

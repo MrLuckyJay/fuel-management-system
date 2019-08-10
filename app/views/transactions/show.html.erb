@@ -1,6 +1,6 @@
 <div class="page">
     <div class="container">
-        <p id="notice"><%= notice %></p>
+        <%= render  "tools/messages" %>
 
         <p>
           <strong>Producttype:</strong>
@@ -16,6 +16,9 @@
           <strong>Vehiclenumber:</strong>
           <%= @transaction.vehicleNumber %>
         </p>
+       
+            <%= image_tag(@transaction.image.url, alt: 'Image') if @transaction.image? %>
+         
         
         <p>
           <strong>User:</strong>

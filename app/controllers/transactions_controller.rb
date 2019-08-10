@@ -35,31 +35,32 @@ class TransactionsController < ApplicationController
     @current_user = current_user
     @transaction = Transaction.new(transaction_params)
 
-    respond_to do |format|
+   
       @current_user = current_user
       if @transaction.save
-        format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
-        format.json { render :show, status: :created, location: @transaction }
+        redirect_to @transaction
+        flash[:success]='Transaction was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @transaction.errors, status: :unprocessable_entity }
+        render :new
+        flash[:danger]='Error Creating Transaction.'
       end
-    end
+   
   end
 
   # PATCH/PUT /transactions/1
   # PATCH/PUT /transactions/1.json
   def update
     @current_user = current_user
-    respond_to do |format|
+  
       if @transaction.update(transaction_params)
-        format.html { redirect_to @transaction, notice: 'Transaction was successfully updated.' }
-        format.json { render :show, status: :ok, location: @transaction }
+       redirect_to @transaction
+       flash[:success]='Transaction was successfully updated.'
       else
-        format.html { render :edit }
-        format.json { render json: @transaction.errors, status: :unprocessable_entity }
+        render :edit 
+        flash[:danger]='Error UdatingTransaction.'
+
       end
-    end
+   
   end
 
   # DELETE /transactions/1
@@ -67,10 +68,10 @@ class TransactionsController < ApplicationController
   def destroy
     @current_user = current_user
     @transaction.destroy
-    respond_to do |format|
-      format.html { redirect_to transactions_url, notice: 'Transaction was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    
+      redirect_to transactions_url
+      flash[:danger]='Transaction was successfully destroyed.'
+   
   end
 
   private
@@ -81,6 +82,6 @@ class TransactionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transaction_params
-      params.require(:transaction).permit(:productType, :liters, :vehicleNumber, :user_id)
+      params.require(:transaction).permit(:productType, :liters, :vehicleNumber, :user_id,:image)
     end
 end

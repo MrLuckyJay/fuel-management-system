@@ -2,18 +2,8 @@
 
 
     <%= form_with(model: transaction, local: true, class:"form-horizontal") do |form| %>
-    <% if transaction.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
-  
-        <ul>
-        <% transaction.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-  
+
+    <%= render  "tools/error", obj:@transaction %>
     <div class="form-group">
       <%= form.label :productType, class:"col-md-3 control-label" %>
       <div class="col-md-7">
@@ -37,6 +27,14 @@
       </div>
       
     </div>
+
+    <div class="form-group">
+        <%= form.label :image, class:"col-md-3 control-label" %>
+        <div class="col-md-7">
+            <%= form.file_field :image, class:"form-control" %>
+        </div>
+        
+      </div>
   
     <div class="form-group">
       <% form.label :user_id, class:"col-md-3 control-label" %>
