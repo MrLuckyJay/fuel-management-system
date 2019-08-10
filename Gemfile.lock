@@ -104,7 +104,7 @@ GEM
     concurrent-ruby (1.1.5)
     crass (1.0.4)
     erubi (1.8.0)
-    excon (0.65.0)
+    excon (0.66.0)
     execjs (2.7.0)
     ffi (1.11.1)
     fog-aws (3.5.2)
@@ -273,7 +273,7 @@ DEPENDENCIES
   carrierwave (>= 2.0.0.rc, < 3.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  fog-aws
+  fog-aws (~> 3.5, >= 3.5.2)
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)

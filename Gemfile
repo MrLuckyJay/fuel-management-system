@@ -23,7 +23,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem "aws-sdk-s3", require: false
 gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
-gem 'fog-aws'
+gem 'fog-aws', '~> 3.5', '>= 3.5.2'
 gem 'mini_magick'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
