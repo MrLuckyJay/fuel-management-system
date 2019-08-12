@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :require_user, except: [:login, :signup]
+ 
+
   #before_action :require_same_user, only:[:edit,:update,:destroy]
 
   # GET /products
