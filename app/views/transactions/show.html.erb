@@ -1,33 +1,45 @@
 <div class="page">
     <div class="container">
         <%= render  "tools/messages" %>
-
-        <p>
-          <strong>Producttype:</strong>
-          <%= @transaction.productType %>
-        </p>
+        <div class="col-md-6 col-md-offset-3">
+          <div class="content" align=center>
+            <h4>
+              <strong>Producttype:</strong>
+              <%= @transaction.productType %>
+            </h4>
+            <hr>
+          
+            <h4>
+              <strong>Liters:</strong>
+              <%= @transaction.liters %>
+            </h4>
+            <hr>
+          
+            <h4>
+              <strong>Vehiclenumber:</strong>
+              <%= @transaction.vehicleNumber %>
+            </h4>
+            <hr>
+          
+            <h4>
+              <strong>Added By:</strong>
+              <%= @transaction.user.firstname %>
+              <%= @transaction.user.lastname %>
+            </h4>
+            <hr>
+          
+            <%= image_tag(@transaction.image.thumb.url, alt: 'Image') if @transaction.image? %><br><br>
+            <hr>
+          
+          
+          
+          
+            <%= link_to 'Edit Transaction', edit_transaction_path(@transaction), class:' btn-warning btn-sm' %> |
+            <%= link_to 'New Transaction', new_transaction_path, class:' btn-success btn-sm' %>
+            | <%= link_to 'Destroy Transaction', @transaction, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn-danger btn-sm' %>
+          </div>
+        </div>
         
-        <p>
-          <strong>Liters:</strong>
-          <%= @transaction.liters %>
-        </p>
-        
-        <p>
-          <strong>Vehiclenumber:</strong>
-          <%= @transaction.vehicleNumber %>
-        </p>
-       
-            <%= image_tag(@transaction.image.url, alt: 'Image') if @transaction.image? %>
-         
-        
-        <p>
-          <strong>User:</strong>
-          <%= @transaction.user.firstname %>
-          <%= @transaction.user.lastname %>
-        </p>
-        
-        <%= link_to 'Edit', edit_transaction_path(@transaction) %> |
-        <%= link_to 'Back', transactions_path %>
     </div>
     
 </div>
