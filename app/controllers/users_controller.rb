@@ -40,7 +40,7 @@ class UsersController < ApplicationController
       if @user.save
         session[:user_id] = @user.id
        redirect_to new_transaction_path
-       flash[:success] = 'User was successfully created.' 
+       flash[:success] = "Welcom #{@user.firstname + @user.lastname}." 
         
       else
       render :new 
