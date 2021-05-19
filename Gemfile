@@ -9,7 +9,7 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'jquery-rails'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 # Use SCSS for stylesheets
